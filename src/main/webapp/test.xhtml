@@ -11,6 +11,33 @@
     <h:body>
         
         <h1>#{testView.testString}</h1>
+
+        <h:form>
+          <p>
+            <h:commandLink value="JSF commandLink works">
+              <p:fileDownload value="#{testView.streamedContent}">
+              </p:fileDownload>
+              <f:param name="path" value="some\ugly\path">
+              </f:param>
+            </h:commandLink>
+          </p>
+          <p>
+            <p:commandLink value="PrimeFaces commandLink also does" ajax="false">
+              <p:fileDownload value="#{testView.streamedContent}">
+              </p:fileDownload>
+              <f:param name="path" value="some\path">
+              </f:param>
+            </p:commandLink>
+          </p>
+          <p>
+            <p:commandLink value="but not under any circumstance" ajax="false">
+              <p:fileDownload value="#{testView.streamedContent}">
+              </p:fileDownload>
+              <f:param name="path" value="some\ugly\path">
+              </f:param>
+            </p:commandLink>
+          </p>
+        </h:form>
         
     </h:body>
 </html>
